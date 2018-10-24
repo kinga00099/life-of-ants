@@ -5,15 +5,17 @@ class Drone extends Ants {
         super(x, y);
     }
 
+    //TODO
     void move() {
     }
 
+    //TODO
     void mate() {
     }
 
     @Override
     public String toString() {
-        return String.format("type:%s, position:%d,%d",
+        return String.format("[type:%s, position:%d,%d]",
                 this.getClass().getSimpleName(),
                 this.getPosX(),
                 this.getPosY());

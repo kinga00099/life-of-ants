@@ -23,7 +23,7 @@ class Queen extends Ants {
 
     @Override
     public String toString() {
-        return String.format("type:%s, position:%d,%d",
+        return String.format("[type:%s, position:%d,%d]",
                 this.getClass().getSimpleName(),
                 this.getPosX(),
                 this.getPosY());
