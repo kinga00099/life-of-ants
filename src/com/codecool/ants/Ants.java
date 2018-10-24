@@ -20,7 +20,7 @@ abstract class Ants {
     //TODO
     abstract void move();
 
-
+    //TODO
     public int distanceToQueen(){
         return 0;
     }
