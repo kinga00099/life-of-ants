@@ -1,6 +1,21 @@
 package com.codecool.ants;
 
-public class Soldier extends Ants {
+class Soldier extends Ants {
     private int cycleStep = 0;
-    void move(){}
+
+    Soldier(int x, int y) {
+        super(x, y);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("type:%s, position:%d,%d, cyclestep:%d",
+                this.getClass().getSimpleName(),
+                this.getPosX(),
+                this.getPosY(),
+                this.cycleStep);
+    }
+
+    void move() {
+    }
 }

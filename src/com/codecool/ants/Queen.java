@@ -1,18 +1,31 @@
 package com.codecool.ants;
 
-public class Queen extends Ants {
+class Queen extends Ants {
     private int timesteps;
 
-    //TODO
-    void move(){}
+    Queen(int x, int y) {
+        super(x, y);
+    }
 
     //TODO
-    boolean wantToMate(){
+    void move() {
+    }
+
+    //TODO
+    boolean wantToMate() {
         return true;
     }
 
     //TODO
-    int setCountDown(){
+    int setCountDown() {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("type:%s, position:%d,%d",
+                this.getClass().getSimpleName(),
+                this.getPosX(),
+                this.getPosY());
     }
 }
