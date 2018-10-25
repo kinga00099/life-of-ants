@@ -1,8 +1,6 @@
 package com.codecool.ants;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -12,7 +10,7 @@ public class Colony {
     private static void createColony() {
         Queen queen = new Queen(0, 0);
         ants.add(queen);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 15; i++) {
             ants.add(new Worker(rollPosition(), rollPosition()));
         }
         for (int i = 0; i < 4; i++) {
@@ -25,7 +23,7 @@ public class Colony {
 
     private static int rollPosition() {
         Random random = new Random();
-        return random.nextInt(101 - (-100)) - 100;
+        return random.nextInt(301 - (-300)) - 300;
     }
 
     private static void printColony() {
@@ -46,14 +44,14 @@ public class Colony {
                 while (Wasp.isThereAWasp()) {
                     try {
                         panel.repaint();
-                        Thread.sleep(50);
+                        Thread.sleep(17);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     for (Ants ant : ants) {
                         if (ant instanceof Soldier) {
                             ((Soldier) ant).moveToWasp();
-                            if (!Wasp.isThereAWasp()){
+                            if (!Wasp.isThereAWasp()) {
                                 break;
                             }
                         }
@@ -65,17 +63,6 @@ public class Colony {
             }
 
         }
-    }
-
-    private static Integer getNearestSoldier() {
-        List<Integer> distanceOfWasp = new ArrayList<>();
-        for (Ants ant : ants) {
-            if (ant instanceof Soldier) {
-                distanceOfWasp.add(((Soldier) ant).distanceToWasp());
-            }
-        }
-        Collections.sort(distanceOfWasp);
-        return distanceOfWasp.get(0);
     }
 
     public static void main(String[] args) {

@@ -7,7 +7,7 @@ class Worker extends Ants {
 
     Worker(int x, int y) {
         super(x, y);
-        Panel.fillAnt(x,y, Color.CYAN);
+        Panel.fillAnt(x, y, Color.CYAN);
     }
 
     private int rollStep() {
@@ -16,17 +16,17 @@ class Worker extends Ants {
     }
 
     void move() {
-        Panel.fillAnt(getPosX(),getPosY(), Color.BLACK);
+        Panel.fillAnt(getPosX(), getPosY(), Color.BLACK);
         int[] stepValue = {3, -3};
-        String[] axisValue = {"x","y"};
+        String[] axisValue = {"x", "y"};
         int step = stepValue[rollStep()];
         String axis = axisValue[rollStep()];
-        if (axis.equals("x") && this.getPosX()+step <= 100){
-            this.setPosX(this.getPosX()+step);
-            Panel.fillAnt(getPosX(),getPosY(), Color.CYAN);
-        } else if (axis.equals("y") && this.getPosY()+step <= 100) {
-            this.setPosY(this.getPosY()+step);
-            Panel.fillAnt(getPosX(),getPosY(), Color.CYAN);
+        if (axis.equals("x") && Math.abs(getPosX() + step) <= 300) {
+            this.setPosX(this.getPosX() + step);
+            Panel.fillAnt(getPosX(), getPosY(), Color.CYAN);
+        } else if (axis.equals("y") && Math.abs(getPosY() + step) <= 300) {
+            this.setPosY(this.getPosY() + step);
+            Panel.fillAnt(getPosX(), getPosY(), Color.CYAN);
         } else {
             move();
         }

@@ -28,17 +28,17 @@ class Wasp {
         isThereAWasp = randomNumber.nextInt(100) == 0;
     }
 
-    Wasp(int x, int y){
+    Wasp(int x, int y) {
         this.setX(x);
         this.setY(y);
-        Panel.fillAnt(x,y, Color.YELLOW);
+        Panel.fillAnt(x, y, Color.YELLOW);
     }
 
     static boolean isThereAWasp() {
         return isThereAWasp;
     }
 
-    static void killWasp(){
+    static void killWasp() {
         isThereAWasp = false;
     }
 

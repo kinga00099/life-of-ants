@@ -22,7 +22,7 @@ class Soldier extends Ants {
                 this.distanceToWasp());
     }
 
-    int distanceToWasp() {
+    private int distanceToWasp() {
         return Math.abs((Wasp.getX() - this.getPosX()) + (Wasp.getY() - this.getPosY()));
     }
 
@@ -44,20 +44,20 @@ class Soldier extends Ants {
         }
         Panel.fillAnt(getPosX(), getPosY(), Color.RED);
 
-        if (isOnWasp()){
+        if (isOnWasp()) {
             attackWasp();
         }
     }
 
-    boolean isOnWasp(){
+    private boolean isOnWasp() {
         return getPosX() == Wasp.getX() && getPosY() == Wasp.getY();
     }
 
 
-    void attackWasp() {
+    private void attackWasp() {
         System.out.println("HAJIME");
         Wasp.killWasp();
-        Panel.fillAnt(getPosX(), getPosY(),Color.BLACK);
+        Panel.fillAnt(getPosX(), getPosY(), Color.BLACK);
         Random random = new Random();
         setPosX(random.nextInt(101));
         setPosY(random.nextInt(101));
