@@ -15,9 +15,10 @@ class Drone extends Ants {
 
     @Override
     public String toString() {
-        return String.format("[type:%s, position:%d,%d]",
+        return String.format("[type:%s, position:%d,%d, disttToQueen:%d]",
                 this.getClass().getSimpleName(),
                 this.getPosX(),
-                this.getPosY());
+                this.getPosY(),
+                this.distanceToQueen());
     }
 }

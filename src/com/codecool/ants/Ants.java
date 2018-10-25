@@ -4,11 +4,11 @@ abstract class Ants {
     private int posX;
     private int posY;
 
-    public int getPosX() {
+    int getPosX() {
         return posX;
     }
 
-    public int getPosY() {
+    int getPosY() {
         return posY;
     }
 
@@ -22,7 +22,7 @@ abstract class Ants {
 
     abstract void move();
 
-    public int distanceToQueen(){
+    int distanceToQueen(){
         return  Math.abs(posX) + Math.abs(posY);
     }
 

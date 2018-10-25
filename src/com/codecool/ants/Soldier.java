@@ -9,11 +9,11 @@ class Soldier extends Ants {
 
     @Override
     public String toString() {
-        return String.format("[type:%s, position:%d,%d, cyclestep:%d]",
+        return String.format("[type:%s, position:%d,%d, disttToQueen:%d]",
                 this.getClass().getSimpleName(),
                 this.getPosX(),
                 this.getPosY(),
-                this.cycleStep);
+                this.distanceToQueen());
     }
 
     //TODO
