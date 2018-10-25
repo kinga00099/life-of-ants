@@ -1,5 +1,7 @@
 package com.codecool.ants;
 
+import java.util.Random;
+
 class Drone extends Ants {
     Drone(int x, int y) {
         super(x, y);
@@ -20,10 +22,22 @@ class Drone extends Ants {
             }
         }
         System.out.println(this.toString());
+        if (distanceToQueen() <= 3 && Queen.wantToMate() && Queen.getTimesteps() == 0) {
+            this.mate();
+        } else if (distanceToQueen() <= 3) {
+            System.out.println("D’OH");
+            Random random = new Random();
+            while (distanceToQueen() != 100) {
+                setPosX(random.nextInt(101));
+                setPosY(random.nextInt(101));
+            }
+        }
     }
 
-    //TODO
     void mate() {
+        Random random = new Random();
+        Queen.setTimesteps(random.nextInt(101) + 100);
+        System.out.println("HALLELUJAH!");
     }
 
     @Override

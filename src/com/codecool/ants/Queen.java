@@ -3,27 +3,31 @@ package com.codecool.ants;
 import java.util.Random;
 
 class Queen extends Ants {
-    private int timesteps;
+    private static int timesteps = 0;
+
+    public static void setTimesteps(int timesteps) {
+        Queen.timesteps = timesteps;
+    }
+
+    public static int getTimesteps() {
+        return timesteps;
+    }
 
     Queen(int x, int y) {
         super(x, y);
-        System.out.println("wanna mate? "+wantToMate());
     }
 
-    //TODO
     void move() {
+        if (timesteps > 0) {
+            timesteps--;
+        }
     }
 
-    //TODO
-    boolean wantToMate() {
+    static boolean wantToMate() {
         Random random = new Random();
         return random.nextInt(101) < 10;
     }
 
-    //TODO
-    int setCountDown() {
-        return 0;
-    }
 
     @Override
     public String toString() {
