@@ -4,27 +4,27 @@ import java.util.Random;
 
 class Wasp {
     private static boolean isThereAWasp = false;
-    private int x, y;
+    static private int x, y;
 
-    int getX() {
+    static int getX() {
         return x;
     }
 
     private void setX(int x) {
-        this.x = x;
+        Wasp.x = x;
     }
 
-    int getY() {
+    static int getY() {
         return y;
     }
 
     private void setY(int y) {
-        this.y = y;
+        Wasp.y = y;
     }
 
     static void setWasp() {
         Random randomNumber = new Random();
-        isThereAWasp = randomNumber.nextInt(100) + 1 <= 10;
+        isThereAWasp = randomNumber.nextInt(100) + 1 <= 5;
     }
 
     Wasp(int x, int y){
@@ -34,5 +34,13 @@ class Wasp {
 
     static boolean isThereAWasp() {
         return isThereAWasp;
+    }
+
+
+    public String toString() {
+        return String.format("[type:%s, position:%d,%d]",
+                this.getClass().getSimpleName(),
+                getX(),
+                getY());
     }
 }
