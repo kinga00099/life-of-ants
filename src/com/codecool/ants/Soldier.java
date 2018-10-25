@@ -18,5 +18,18 @@ class Soldier extends Ants {
 
     //TODO
     void move() {
+        if (cycleStep == 0) {
+            cycleStep ++;
+            setPosY(getPosY() + 1);
+        } else if (cycleStep == 1) {
+            cycleStep ++;
+            setPosX(getPosX() + 1);
+        } else if (cycleStep == 2) {
+            cycleStep ++;
+            setPosY(getPosX() - 1);
+        } else if (cycleStep == 3) {
+            cycleStep = 0;
+            setPosX(getPosX() - 1);
+        }
     }
 }

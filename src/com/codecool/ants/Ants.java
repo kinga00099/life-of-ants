@@ -12,11 +12,14 @@ abstract class Ants {
         return posY;
     }
 
-    private void setPosition(int x, int y) {
-        this.posX = x;
-        this.posY = y;
+    public void setPosX(int posX) {
+        this.posX = posX;
     }
-    
+
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+
     abstract void move();
 
     int distanceToQueen(){
@@ -24,7 +27,8 @@ abstract class Ants {
     }
 
     Ants(int x, int y){
-        setPosition(x, y);
+        setPosX(x);
+        setPosY(y);
     }
 
 }
