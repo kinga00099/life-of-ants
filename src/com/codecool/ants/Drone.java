@@ -26,11 +26,8 @@ class Drone extends Ants {
             this.mate();
         } else if (distanceToQueen() <= 3) {
             System.out.println("D’OH");
-            Random random = new Random();
-            while (distanceToQueen() != 100) {
-                setPosX(random.nextInt(101));
-                setPosY(random.nextInt(101));
-            }
+            kickoff();
+
         }
     }
 
@@ -38,6 +35,15 @@ class Drone extends Ants {
         Random random = new Random();
         Queen.setTimesteps(random.nextInt(101) + 100);
         System.out.println("HALLELUJAH!");
+        kickoff();
+    }
+
+    void kickoff() {
+        Random random = new Random();
+        while (distanceToQueen() != 100) {
+            setPosX(random.nextInt(101));
+            setPosY(random.nextInt(101));
+        }
     }
 
     @Override
