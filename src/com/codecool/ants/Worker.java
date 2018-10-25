@@ -12,7 +12,7 @@ class Worker extends Ants {
 
     private int rollStep() {
         Random random = new Random();
-        return random.nextInt(2-1)+1;
+        return random.nextInt(2);
     }
 
     void move() {
