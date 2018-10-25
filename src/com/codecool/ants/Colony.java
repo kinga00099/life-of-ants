@@ -7,15 +7,18 @@ import java.util.Random;
 public class Colony {
     private static List<Ants> ants = new ArrayList<>();
 
-    private static void createAnts() {
+    private static void createColony() {
         Queen queen = new Queen(0, 0);
         ants.add(queen);
-        Worker worker1 = new Worker(rollPosition(), rollPosition());
-        ants.add(worker1);
-        Soldier soldier1 = new Soldier(rollPosition(), rollPosition());
-        ants.add(soldier1);
-        Drone drone1 = new Drone(rollPosition(), rollPosition());
-        ants.add(drone1);
+        for (int i = 0; i < 10 ; i++) {
+            ants.add(new Worker(rollPosition(), rollPosition()));
+        }
+        for (int i = 0; i < 4 ; i++) {
+            ants.add(new Soldier(rollPosition(), rollPosition()));
+        }
+        for (int i = 0; i < 2; i++) {
+            ants.add(new Drone(rollPosition(), rollPosition()));
+        }
     }
 
     private static int rollPosition() {
@@ -23,15 +26,21 @@ public class Colony {
         return random.nextInt(101 - (-100)) - 100;
     }
 
-    private static void printAnts() {
+    private static void printColony() {
         System.out.println(ants.toString());
     }
 
-    public static void main(String[] args) {
-        createAnts();
-        printAnts();
-        for (int i = 0; i < 41; i++) {
-            ants.get(3).move();
+    private static void simulateColony(){
+        for (int i = 0; i < 100; i++) {
+            for (Ants ant : ants){
+                ant.move();
+            }
         }
+    }
+
+    public static void main(String[] args) {
+        createColony();
+        printColony();
+        simulateColony();
     }
 }
