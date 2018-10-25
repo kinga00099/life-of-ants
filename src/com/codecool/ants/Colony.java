@@ -1,5 +1,6 @@
 package com.codecool.ants;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -44,8 +45,9 @@ public class Colony {
                 if (Wasp.isThereAWasp()) {
                     if (ant instanceof Soldier && ((Soldier) ant).distanceToWasp() == getNearestSoldier()) {
                         Wasp wasp = new Wasp(rollPosition(), rollPosition());
-                        ((Soldier) ant).moveToWasp();
+                        ((Soldier) ant).moveToWasp(panel);
                         ((Soldier) ant).attackWasp();
+                        Panel.fillAnt(Wasp.getX(),Wasp.getY(), Color.BLACK);
                         wasp = null;
                     }
                 } else {

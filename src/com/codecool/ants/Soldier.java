@@ -27,13 +27,21 @@ class Soldier extends Ants {
     }
 
 
-    void moveToWasp() {
+    void moveToWasp(Panel panel) {
         while (this.getPosX() != Wasp.getX()){
+            Panel.fillAnt(getPosX(),getPosY(), Color.BLACK);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if (this.getPosX() > Wasp.getX()) {
                 setPosX(getPosX() - 1);
             } else {
                 setPosX(getPosX() + 1);
             }
+            Panel.fillAnt(getPosX(),getPosY(), Color.RED);
+            panel.repaint();
         }
 
         while (this.getPosY() != Wasp.getY()){
@@ -43,6 +51,7 @@ class Soldier extends Ants {
                 setPosY(getPosY() + 1);
             }
         }
+        Panel.fillAnt(getPosX(),getPosY(), Color.RED);
     }
 
     void attackWasp() {
