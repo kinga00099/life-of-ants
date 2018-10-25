@@ -25,7 +25,7 @@ class Wasp {
 
     static void setWasp() {
         Random randomNumber = new Random();
-        isThereAWasp = randomNumber.nextInt(100) + 1 <= 5;
+        isThereAWasp = randomNumber.nextInt(100) <= 1;
     }
 
     Wasp(int x, int y){
@@ -36,6 +36,10 @@ class Wasp {
 
     static boolean isThereAWasp() {
         return isThereAWasp;
+    }
+
+    static void killWasp(){
+        isThereAWasp = false;
     }
 
 

@@ -32,7 +32,7 @@ public class Colony {
         System.out.println(ants.toString());
     }
 
-    private static void simulateColony(Panel panel){
+    private static void simulateColony(Panel panel) {
         for (int i = 0; i < 500; i++) {
             try {
                 panel.repaint();
@@ -41,19 +41,29 @@ public class Colony {
                 e.printStackTrace();
             }
             Wasp.setWasp();
-            for (Ants ant : ants) {
-                if (Wasp.isThereAWasp()) {
-                    if (ant instanceof Soldier && ((Soldier) ant).distanceToWasp() == getNearestSoldier()) {
-                        Wasp wasp = new Wasp(rollPosition(), rollPosition());
-                        ((Soldier) ant).moveToWasp(panel);
-                        ((Soldier) ant).attackWasp();
-                        Panel.fillAnt(Wasp.getX(),Wasp.getY(), Color.BLACK);
-                        wasp = null;
+            if (Wasp.isThereAWasp()) {
+                Wasp wasp = new Wasp(rollPosition(), rollPosition());
+                while (Wasp.isThereAWasp()) {
+                    try {
+                        panel.repaint();
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                } else {
-                    ant.move();
+                    for (Ants ant : ants) {
+                        if (ant instanceof Soldier) {
+                            ((Soldier) ant).moveToWasp();
+                            if (!Wasp.isThereAWasp()){
+                                break;
+                            }
+                        }
+                    }
                 }
             }
+            for (Ants ant : ants) {
+                ant.move();
+            }
+
         }
     }
 
@@ -72,7 +82,8 @@ public class Colony {
         Panel panel = new Panel();
         new Window(panel);
         createColony();
-        printColony();
         simulateColony(panel);
+        printColony();
+
     }
 }
