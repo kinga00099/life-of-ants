@@ -11,7 +11,9 @@ class Queen extends Ants {
     }
 
     void move() {
-        System.out.println("The Queen does not move.");
+        if (timesteps > 0) {
+            timesteps--;
+        }
     }
 
     //TODO
@@ -20,10 +22,6 @@ class Queen extends Ants {
         return random.nextInt(101) < 10;
     }
 
-    //TODO
-    int setCountDown() {
-        return 0;
-    }
 
     @Override
     public String toString() {
