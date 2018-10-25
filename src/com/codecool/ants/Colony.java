@@ -30,5 +30,8 @@ public class Colony {
     public static void main(String[] args) {
         createAnts();
         printAnts();
+        System.out.println(ants.get(0).distanceToQueen());
+        System.out.println(ants.get(1).distanceToQueen());
+        System.out.println(ants.get(2).distanceToQueen());
     }
 }

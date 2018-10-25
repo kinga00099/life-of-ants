@@ -16,15 +16,12 @@ abstract class Ants {
         this.posX = x;
         this.posY = y;
     }
-
-    //TODO
+    
     abstract void move();
 
-    //TODO
     public int distanceToQueen(){
-        return 0;
+        return  Math.abs(posX) + Math.abs(posY);
     }
-
 
     Ants(int x, int y){
         setPosition(x, y);
