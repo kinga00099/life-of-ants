@@ -3,15 +3,15 @@ package com.codecool.ants;
 import java.util.Random;
 
 class Queen extends Ants {
-    private int timesteps;
+    private int timesteps = 0;
 
     Queen(int x, int y) {
         super(x, y);
         System.out.println("wanna mate? "+wantToMate());
     }
 
-    //TODO
     void move() {
+        System.out.println("The Queen does not move.");
     }
 
     //TODO
