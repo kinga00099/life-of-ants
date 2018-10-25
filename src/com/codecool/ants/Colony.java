@@ -20,7 +20,7 @@ public class Colony {
 
     private static int rollPosition() {
         Random random = new Random();
-        return random.nextInt(100 - (-100)) - 100;
+        return random.nextInt(101 - (-100)) - 100;
     }
 
     private static void printAnts() {
