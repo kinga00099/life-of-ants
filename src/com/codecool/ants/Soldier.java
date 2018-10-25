@@ -26,10 +26,11 @@ class Soldier extends Ants {
             setPosX(getPosX() + 1);
         } else if (cycleStep == 2) {
             cycleStep ++;
-            setPosY(getPosX() - 1);
+            setPosY(getPosY() - 1);
         } else if (cycleStep == 3) {
             cycleStep = 0;
             setPosX(getPosX() - 1);
         }
+        System.out.println(this.toString());
     }
 }

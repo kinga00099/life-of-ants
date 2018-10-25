@@ -30,5 +30,11 @@ public class Colony {
     public static void main(String[] args) {
         createAnts();
         printAnts();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
     }
 }
