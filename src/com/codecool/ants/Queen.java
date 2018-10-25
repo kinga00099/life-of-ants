@@ -1,5 +1,6 @@
 package com.codecool.ants;
 
+import java.awt.*;
 import java.util.Random;
 
 class Queen extends Ants {
@@ -15,9 +16,11 @@ class Queen extends Ants {
 
     Queen(int x, int y) {
         super(x, y);
+        Panel.fillAnt(x,y, Color.YELLOW);
     }
 
     void move() {
+        Panel.fillAnt(getPosX(),getPosY(), Color.YELLOW);
         if (timesteps > 0) {
             timesteps--;
         }
@@ -25,7 +28,7 @@ class Queen extends Ants {
 
     static boolean wantToMate() {
         Random random = new Random();
-        return random.nextInt(101) < 10;
+        return random.nextInt(101) < 50;
     }
 
 

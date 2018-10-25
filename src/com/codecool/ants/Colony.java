@@ -31,8 +31,14 @@ public class Colony {
         System.out.println(ants.toString());
     }
 
-    private static void simulateColony() {
+    private static void simulateColony(Panel panel){
         for (int i = 0; i < 500; i++) {
+            try {
+                panel.repaint();
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             Wasp.setWasp();
             for (Ants ant : ants) {
                 if (Wasp.isThereAWasp()) {
@@ -61,8 +67,10 @@ public class Colony {
     }
 
     public static void main(String[] args) {
+        Panel panel = new Panel();
+        new Window(panel);
         createColony();
         printColony();
-        simulateColony();
+        simulateColony(panel);
     }
 }
