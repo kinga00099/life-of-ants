@@ -15,7 +15,6 @@ class Queen extends Ants {
 
     Queen(int x, int y) {
         super(x, y);
-        System.out.println("wanna mate? "+wantToMate());
     }
 
     void move() {
