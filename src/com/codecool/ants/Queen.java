@@ -1,10 +1,13 @@
 package com.codecool.ants;
 
+import java.util.Random;
+
 class Queen extends Ants {
     private int timesteps;
 
     Queen(int x, int y) {
         super(x, y);
+        System.out.println("wanna mate? "+wantToMate());
     }
 
     //TODO
@@ -13,7 +16,8 @@ class Queen extends Ants {
 
     //TODO
     boolean wantToMate() {
-        return true;
+        Random random = new Random();
+        return random.nextInt(101) < 10;
     }
 
     //TODO
