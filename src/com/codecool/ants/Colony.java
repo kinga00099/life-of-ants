@@ -31,7 +31,7 @@ public class Colony {
     }
 
     private static void simulateColony(){
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 500; i++) {
             for (Ants ant : ants){
                 ant.move();
             }

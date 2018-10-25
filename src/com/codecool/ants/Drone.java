@@ -24,6 +24,13 @@ class Drone extends Ants {
         System.out.println(this.toString());
         if (distanceToQueen() <= 3 && Queen.wantToMate() && Queen.getTimesteps() == 0) {
             this.mate();
+        } else if (distanceToQueen() <= 3) {
+            System.out.println("D’OH");
+            Random random = new Random();
+            while (distanceToQueen() != 100) {
+                setPosX(random.nextInt(101));
+                setPosY(random.nextInt(101));
+            }
         }
     }
 

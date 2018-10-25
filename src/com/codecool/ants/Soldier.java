@@ -31,6 +31,5 @@ class Soldier extends Ants {
             cycleStep = 0;
             setPosX(getPosX() - 1);
         }
-        System.out.println(this.toString());
     }
 }
