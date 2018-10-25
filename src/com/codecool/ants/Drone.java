@@ -39,6 +39,7 @@ class Drone extends Ants {
         Queen.setTimesteps(random.nextInt(101) + 100);
         System.out.println("HALLELUJAH!");
         kickoff();
+
     }
 
     void kickoff() {
