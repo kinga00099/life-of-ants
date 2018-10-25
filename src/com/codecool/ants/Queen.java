@@ -3,7 +3,15 @@ package com.codecool.ants;
 import java.util.Random;
 
 class Queen extends Ants {
-    private int timesteps = 0;
+    private static int timesteps = 0;
+
+    public static void setTimesteps(int timesteps) {
+        Queen.timesteps = timesteps;
+    }
+
+    public static int getTimesteps() {
+        return timesteps;
+    }
 
     Queen(int x, int y) {
         super(x, y);
@@ -16,8 +24,7 @@ class Queen extends Ants {
         }
     }
 
-    //TODO
-    boolean wantToMate() {
+    static boolean wantToMate() {
         Random random = new Random();
         return random.nextInt(101) < 10;
     }
