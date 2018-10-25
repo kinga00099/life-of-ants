@@ -1,5 +1,6 @@
 package com.codecool.ants;
 
+import java.awt.*;
 import java.util.Random;
 
 class Wasp {
@@ -30,6 +31,7 @@ class Wasp {
     Wasp(int x, int y){
         this.setX(x);
         this.setY(y);
+        Panel.fillAnt(x,y, Color.MAGENTA);
     }
 
     static boolean isThereAWasp() {

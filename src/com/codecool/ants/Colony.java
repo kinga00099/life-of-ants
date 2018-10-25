@@ -35,7 +35,7 @@ public class Colony {
         for (int i = 0; i < 500; i++) {
             try {
                 panel.repaint();
-                Thread.sleep(300);
+                Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
