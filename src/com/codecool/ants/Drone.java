@@ -5,8 +5,21 @@ class Drone extends Ants {
         super(x, y);
     }
 
-    //TODO
     void move() {
+        if (distanceToQueen() > 0 && Math.abs(getPosX()) > 0) {
+            if (getPosX() > 0) {
+                setPosX(getPosX() - 1);
+            } else {
+                setPosX(getPosX() + 1);
+            }
+        } else if (distanceToQueen() > 0) {
+            if (getPosY() > 0) {
+                setPosY(getPosY() - 1);
+            } else {
+                setPosY(getPosY() + 1);
+            }
+        }
+        System.out.println(this.toString());
     }
 
     //TODO

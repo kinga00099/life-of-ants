@@ -8,15 +8,14 @@ class Worker extends Ants {
         super(x, y);
     }
 
-    private int[] stepValue = {1, -1};
-    private String[] axisValue = {"x","y"};
-
     private int rollStep() {
         Random random = new Random();
         return random.nextInt(2-1)+1;
     }
 
     void move() {
+        int[] stepValue = {1, -1};
+        String[] axisValue = {"x","y"};
         int step = stepValue[rollStep()];
         String axis = axisValue[rollStep()];
         if (axis.equals("x") && this.getPosX()+step <= 100){

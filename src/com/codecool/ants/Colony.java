@@ -30,13 +30,8 @@ public class Colony {
     public static void main(String[] args) {
         createAnts();
         printAnts();
-        ants.get(1).move();
-        printAnts();
-        ants.get(2).move();
-        ants.get(2).move();
-        ants.get(2).move();
-        ants.get(2).move();
-        ants.get(2).move();
-        ants.get(2).move();
+        for (int i = 0; i < 41; i++) {
+            ants.get(3).move();
+        }
     }
 }
