@@ -16,6 +16,10 @@ class Soldier extends Ants {
                 this.distanceToQueen());
     }
 
+    void attackWasp(){
+
+    }
+
     //TODO
     void move() {
         if (cycleStep == 0) {

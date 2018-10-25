@@ -32,8 +32,14 @@ public class Colony {
 
     private static void simulateColony(){
         for (int i = 0; i < 100; i++) {
+            Wasp.setWasp();
             for (Ants ant : ants){
-                ant.move();
+                if (!Wasp.isThereAWasp()) {
+                    ant.move();
+                } else {
+                    System.out.println("WAAASP");
+                    Wasp wasp = new Wasp(rollPosition(),rollPosition());
+                }
             }
         }
     }
