@@ -39,7 +39,8 @@ public class Colony {
     }
 
     public static void main(String[] args) {
-        Window gameWindow = new Window();
+        Panel panel = new Panel();
+        new Window(panel);
         createColony();
         printColony();
         simulateColony();

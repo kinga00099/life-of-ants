@@ -6,12 +6,11 @@ import java.awt.image.BufferedImage;
 
 public class Panel extends JPanel {
 
-    private BufferedImage canvas;
+    private static BufferedImage canvas;
 
     public Panel() {
-        canvas = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
+        canvas = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         fillCanvas(Color.BLACK);
-        fillAnt(400,400, Color.RED);
 
     }
 
@@ -25,23 +24,23 @@ public class Panel extends JPanel {
         g2.drawImage(canvas, null, null);
     }
 
-    public void fillAnt(int posX, int posY, Color c) {
+    public static void fillAnt(int posX, int posY, Color c) {
         int color = c.getRGB();
-        for (int x = posX; x < posX + 5; x++) {
-            for (int y = posY; y < posY + 5; y++) {
+        int posXGraphical = 400 + posX;
+        int posYGraphical = 400 + posY;
+        for (int x = posXGraphical; x < posXGraphical + 5; x++) {
+            for (int y = posYGraphical; y < posYGraphical + 5; y++) {
                 canvas.setRGB(x, y, color);
             }
         }
-        repaint();
     }
 
-    public void fillCanvas(Color c) {
+    public static void fillCanvas(Color c) {
         int color = c.getRGB();
         for (int x = 0; x < canvas.getWidth(); x++) {
             for (int y = 0; y < canvas.getHeight(); y++) {
                 canvas.setRGB(x, y, color);
             }
         }
-        repaint();
     }
 }

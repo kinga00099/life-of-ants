@@ -4,9 +4,9 @@ import javax.swing.*;
 
 public class Window {
 
-    Window() {
+    Window(Panel panel) {
         JFrame frame = new JFrame("Life of the Ants");
-        frame.add(new Panel());
+        frame.add(panel);
         frame.pack();
         frame.setVisible(true);
         frame.setResizable(false);

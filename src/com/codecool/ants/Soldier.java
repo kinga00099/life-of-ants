@@ -1,10 +1,13 @@
 package com.codecool.ants;
 
+import java.awt.*;
+
 class Soldier extends Ants {
     private int cycleStep = 0;
 
     Soldier(int x, int y) {
         super(x, y);
+        Panel.fillAnt(x,y, Color.RED);
     }
 
     @Override
@@ -16,8 +19,8 @@ class Soldier extends Ants {
                 this.distanceToQueen());
     }
 
-    //TODO
     void move() {
+        Panel.fillAnt(getPosX(),getPosY(), Color.BLACK);
         if (cycleStep == 0) {
             cycleStep ++;
             setPosY(getPosY() + 1);
@@ -31,5 +34,6 @@ class Soldier extends Ants {
             cycleStep = 0;
             setPosX(getPosX() - 1);
         }
+        Panel.fillAnt(getPosX(),getPosY(), Color.RED);
     }
 }

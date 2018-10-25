@@ -1,13 +1,16 @@
 package com.codecool.ants;
 
+import java.awt.*;
 import java.util.Random;
 
 class Drone extends Ants {
     Drone(int x, int y) {
         super(x, y);
+        Panel.fillAnt(x,y, Color.GREEN);
     }
 
     void move() {
+        Panel.fillAnt(getPosX(),getPosY(), Color.BLACK);
         if (distanceToQueen() > 0 && Math.abs(getPosX()) > 0) {
             if (getPosX() > 0) {
                 setPosX(getPosX() - 1);
@@ -29,6 +32,7 @@ class Drone extends Ants {
             kickoff();
 
         }
+        Panel.fillAnt(getPosX(),getPosY(), Color.GREEN);
     }
 
     void mate() {
