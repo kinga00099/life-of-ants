@@ -16,11 +16,11 @@ class Queen extends Ants {
 
     Queen(int x, int y) {
         super(x, y);
-        Panel.fillAnt(x,y, Color.YELLOW);
+        Panel.fillAnt(x,y, Color.MAGENTA);
     }
 
     void move() {
-        Panel.fillAnt(getPosX(),getPosY(), Color.YELLOW);
+        Panel.fillAnt(getPosX(),getPosY(), Color.MAGENTA);
         if (timesteps > 0) {
             timesteps--;
         }

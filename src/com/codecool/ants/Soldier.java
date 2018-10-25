@@ -29,13 +29,13 @@ class Soldier extends Ants {
 
     void moveToWasp() {
         Panel.fillAnt(getPosX(), getPosY(), Color.BLACK);
-        if (distanceToWasp() > 0 && Math.abs(getPosX()) > Wasp.getX()) {
+        if (getPosX() != Wasp.getX()) {
             if (this.getPosX() > Wasp.getX()) {
                 setPosX(getPosX() - 1);
             } else {
                 setPosX(getPosX() + 1);
             }
-        } else if (distanceToWasp() > 0) {
+        } else {
             if (getPosY() > Wasp.getY()) {
                 setPosY(getPosY() - 1);
             } else {

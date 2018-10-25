@@ -25,13 +25,13 @@ class Wasp {
 
     static void setWasp() {
         Random randomNumber = new Random();
-        isThereAWasp = randomNumber.nextInt(100) <= 1;
+        isThereAWasp = randomNumber.nextInt(100) == 0;
     }
 
     Wasp(int x, int y){
         this.setX(x);
         this.setY(y);
-        Panel.fillAnt(x,y, Color.MAGENTA);
+        Panel.fillAnt(x,y, Color.YELLOW);
     }
 
     static boolean isThereAWasp() {
