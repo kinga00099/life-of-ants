@@ -17,7 +17,7 @@ class Worker extends Ants {
 
     void move() {
         Panel.fillAnt(getPosX(),getPosY(), Color.BLACK);
-        int[] stepValue = {1, -1};
+        int[] stepValue = {3, -3};
         String[] axisValue = {"x","y"};
         int step = stepValue[rollStep()];
         String axis = axisValue[rollStep()];

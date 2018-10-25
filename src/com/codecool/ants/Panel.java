@@ -28,8 +28,8 @@ public class Panel extends JPanel {
         int color = c.getRGB();
         int posXGraphical = 400 + posX;
         int posYGraphical = 400 + posY;
-        for (int x = posXGraphical; x < posXGraphical + 5; x++) {
-            for (int y = posYGraphical; y < posYGraphical + 5; y++) {
+        for (int x = posXGraphical; x < posXGraphical + 8; x++) {
+            for (int y = posYGraphical; y < posYGraphical + 8; y++) {
                 canvas.setRGB(x, y, color);
             }
         }

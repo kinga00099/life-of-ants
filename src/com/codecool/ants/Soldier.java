@@ -67,16 +67,16 @@ class Soldier extends Ants {
         Panel.fillAnt(getPosX(), getPosY(), Color.BLACK);
         if (cycleStep == 0) {
             cycleStep++;
-            setPosY(getPosY() + 1);
+            setPosY(getPosY() + 2);
         } else if (cycleStep == 1) {
             cycleStep++;
-            setPosX(getPosX() + 1);
+            setPosX(getPosX() + 2);
         } else if (cycleStep == 2) {
             cycleStep++;
-            setPosY(getPosY() - 1);
+            setPosY(getPosY() - 2);
         } else if (cycleStep == 3) {
             cycleStep = 0;
-            setPosX(getPosX() - 1);
+            setPosX(getPosX() - 2);
         }
         Panel.fillAnt(getPosX(), getPosY(), Color.RED);
     }
