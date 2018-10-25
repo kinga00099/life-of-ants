@@ -25,7 +25,7 @@ class Queen extends Ants {
 
     static boolean wantToMate() {
         Random random = new Random();
-        return random.nextInt(101) < 10;
+        return random.nextInt(101) < 50;
     }
 
 

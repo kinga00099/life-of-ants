@@ -39,6 +39,7 @@ public class Colony {
     }
 
     public static void main(String[] args) {
+        Window gameWindow = new Window();
         createColony();
         printColony();
         simulateColony();
