@@ -32,5 +32,11 @@ public class Colony {
         printAnts();
         ants.get(1).move();
         printAnts();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
+        ants.get(2).move();
     }
 }
