@@ -11,17 +11,21 @@ class Worker extends Ants {
     private int[] stepValue = {1, -1};
     private String[] axisValue = {"x","y"};
 
-    int rollStep() {
+    private int rollStep() {
         Random random = new Random();
         return random.nextInt(2-1)+1;
     }
 
-
-    //TODO
     void move() {
         int step = stepValue[rollStep()];
         String axis = axisValue[rollStep()];
-
+        if (axis.equals("x") && this.getPosX()+step <= 100){
+            this.setPosX(this.getPosX()+step);
+        } else if (axis.equals("y") && this.getPosY()+step <= 100) {
+            this.setPosY(this.getPosY()+step);
+        } else {
+            move();
+        }
     }
 
     @Override
